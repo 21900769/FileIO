@@ -5,34 +5,36 @@ import java.io.*;
 /**
  * Created by sherxon on 4/23/17. https://github.com/sherxon/AlgoDS/tree/master/src/oi
  */
-public class UsingBufferedReader {
+public class UsingBufferedReader_student {
     public static void main(String[] args) throws IOException {
-
-        // Modify UsingBufferedReader.java to get a file name from the command line argument and run if it works correctly.
-    	
-    	String fileName1 = args[0]; // input1MB
-    	String fileName2 = args[1]; // input10MB
-
 
 
         //-------------- Test reading 1 MB file. --------------------
     	
+    	String fileName = args[0];
         StopWatch.start();
 
-        BufferedReader inputStream= new BufferedReader(new FileReader(fileName1));
+        // BufferedReader inputStream= new BufferedReader(new FileReader(DumpDataWriter.input1MB));
+        BufferedReader inputStream= new BufferedReader(new FileReader(fileName));
+
         while (inputStream.read()!=-1){}
 
         long duration = StopWatch.stop();
         System.out.println(duration + " milsec");
         
         inputStream.close();
+        
+        // student code
+        // Modify UsingBufferedReader.java to get a file name from the command line argument and run if it works correctly.
+        
+        
 
 
         //-------------- Test reading 10 MB file. --------------------
 
         StopWatch.start();
 
-        BufferedReader inputStream2= new BufferedReader(new FileReader(fileName2));
+        BufferedReader inputStream2= new BufferedReader(new FileReader(DumpDataWriter.input10MB));
         while (inputStream2.read()!=-1){}
 
         long duration2 = StopWatch.stop();
